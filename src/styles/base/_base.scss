@@ -1,0 +1,84 @@
+@import '../base/vars';
+@import '../base/mixins';
+@import '../base/reset';
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+/* Desktop Styles */
+/* Desktop Styles */
+
+
+h1 { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 48pt; line-height: 120%; letter-spacing: 0%; }
+h2 { font-family: 'Jost', sans-serif; font-weight: 700; font-size: 40pt; line-height: 120%; letter-spacing: 0%; }
+h3 { font-family: 'Jost', sans-serif; font-weight: 800; font-size: 32pt; line-height: 120%; letter-spacing: 0%; }
+h4 { font-family: 'Jost', sans-serif; font-weight: 700; font-size: 28pt; line-height: 120%; letter-spacing: 0%; }
+h5 { font-family: 'Jost', sans-serif; font-weight: 500; font-size: 22pt; line-height: 120%; letter-spacing: 0%; }
+button { font-family: 'Jost', sans-serif; font-weight: 500; font-size: 22pt; line-height: 120%; letter-spacing: 0%; }
+
+.subtitle-1 { font-family: 'Jost', sans-serif; font-weight: 400; font-size: 18pt; line-height: 150%; letter-spacing: 0%; }
+.subtitle-2 { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 16pt; line-height: 120%; letter-spacing: 0%; }
+.subtitle-3 { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 14pt; line-height: 150%; letter-spacing: 0%; }
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    h1 { font-size: 24pt; }
+    h2 { font-size: 20pt; }
+    h3 { font-size: 16pt; }
+    h4 { font-size: 14pt; font-weight: 800; }
+    button { font-size: 18pt; font-weight: 600; }
+    
+    .menu { font-family: 'Jost', sans-serif; font-weight: 600; font-size: 20pt; line-height: 120%; letter-spacing: 0%; }
+    .headline-1 { font-size: 14pt; }
+    .headline-2 { font-size: 12pt; }
+    .headline-3 { font-size: 10pt; font-weight: 400; }
+}
+
+
+body {
+    background-color: white;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 10vw;
+    position: relative;
+}
+
+
+.content {
+    padding-left: 105.8px;
+    padding-right: 105.8px;
+    margin: 0 auto;
+
+    @include mediaWidth($desktop) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Ddesktop */
+.con {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    margin: 0 auto;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .con {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin: 0 15px;
+    }
+}

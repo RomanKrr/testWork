@@ -1,0 +1,17 @@
+//base
+@use 'base/base' as *;
+@use 'base/mixins' as *;
+@use 'base/reset' as *;
+@use 'base/vars' as *;
+
+@use './components/header' as *;
+@use './components/footer' as *;
+
+@use './sections/hero' as *;
+@use './sections/benefits' as *;
+@use './sections/slider' as *;
+@use './sections/training' as *;
+@use './sections/career' as *;
+@use './sections/tariffs' as *;
+@use './sections/comments' as *;
+@use './sections/contact' as *;

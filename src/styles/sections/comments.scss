@@ -1,0 +1,124 @@
+@import '../base/vars';
+@import '../base/mixins';
+@import '../base/reset';
+@import '../base/base';
+
+.comments {
+    padding: 60px 0;
+
+    &__title {
+        color: #333;
+        margin-bottom: 40px;
+    }
+
+    &__container {
+        position: relative;
+        width: 100%;
+    }
+
+    &__slider {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 10px;
+
+        @include mediaWidth($desktop) {
+            border: 1px solid white;
+        }
+    }
+
+    &__card {
+        padding: 50px;
+        width: 350px;
+        text-align: left;
+        transition: transform 0.3s ease;
+        position: relative;
+        min-width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: $black;
+        color: $white;
+
+
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        &-text {
+            margin-bottom: 20px;
+        }
+
+        &-info {
+            padding-top: 15px;
+        }
+
+        &-name {
+            font-weight: bold;
+        }
+
+        &-position {
+            color: #777;
+            font-style: italic;
+        }
+
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 50%;
+            background-color: $white;
+
+            @include mediaWidth($desktop) {
+                display: none;
+            }
+        }
+    }
+
+    .quote {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: $white;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        z-index: 10;
+        display: none;
+
+        @include mediaWidth($largeDesktop) {
+            display: block;
+        }
+    }
+
+    .swiper-button-prev {
+        left: 10px;
+    }
+
+    .swiper-button-next {
+        right: 10px;
+    }
+}
+
+@include mediaWidth($desktop) {
+    .comments__card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+// .swiper-wrapper{
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }

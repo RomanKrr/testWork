@@ -1,0 +1,132 @@
+@import '../base/vars';
+@import '../base/mixins';
+@import '../base/reset';
+@import '../base/base';
+
+.hero {
+    background-image: url(../../../public/images/main_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    border-radius: 0 0 72px 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        max-width: 1200px;
+        width: 100%;
+
+        @include mediaWidth($tablet) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        flex: 1;
+        max-width: 500px;
+
+        @include mediaWidth($tablet) {
+            max-width: 100%;
+            gap: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: 1rem;
+
+    }
+
+    &__subtitle {
+        color: $greyLight;
+        margin-bottom: 1.5rem;
+    }
+
+    &__avatars {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        z-index: 1;
+
+        @include mediaWidth($tablet) {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        &__description {
+            color: $greyLight;
+            max-width: 300px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+    }
+
+    &__btn {
+        @include button-styles(white, transparent);
+        padding: 12px 24px;
+        border-radius: 30px;
+        width: 50%;
+        z-index: 10;
+
+        @include mediaWidth($tablet) {
+            width: 100%;
+        }
+    }
+
+    &__visual {
+        flex: 1;
+        position: relative;
+        z-index: 1;
+
+        .hero__img {
+            width: 100%;
+            position: relative;
+            z-index: 5;
+            animation: float 3s ease-in-out infinite;
+
+            @include mediaWidth($tablet) {
+                max-width: 200px;
+            }
+        }
+
+        .hero__light {
+            position: absolute;
+            top: 0;
+            left: -20%;
+            z-index: 1;
+            width: 100%;
+
+            @include mediaWidth($tablet) {
+                left: 10%;
+                top: -15%;
+                width: 250px;
+            }
+        }
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

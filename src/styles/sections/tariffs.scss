@@ -1,0 +1,206 @@
+@import '../base/vars';
+@import '../base/mixins';
+@import '../base/reset';
+@import '../base/base';
+
+.tariffs {
+
+
+    &__title {
+        color: #333;
+        margin-bottom: 40px;
+    }
+
+    &__cards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        overflow: hidden;
+        position: relative;
+        margin: 0 auto;
+        transform: translateX(0%);
+        width: 100%;
+    }
+
+    &__container {
+        position: relative;
+    }
+
+    &__arrow {
+        display: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 9999;
+
+        @include mediaWidth($desktop) {
+            display: block;
+        }
+    }
+
+    &__left {
+        left: 2%;
+    }
+
+    &__right {
+        right: 2%;
+    }
+
+    &__card-title--popular{
+        color: $white;
+    }
+    &__card {
+        background: $greyExtraLight;
+        padding: 30px;
+        border-radius: 40px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        margin: 0 auto;
+        position: relative;
+        transform: scale(0.95);
+        z-index: 9999;
+        min-width: 350px;
+
+        hr {
+            width: 100%;
+            height: 1.5px;
+            background: gray;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        &-title {
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        &-subtitle {
+            color: $greyExtraLight;
+            margin-bottom: 40px;
+        }
+
+        &-policy {
+            display: flex;
+            color: $greySecondary;
+            justify-content: space-between;
+        }
+
+        &-module {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        &-one{
+            position: relative;
+        }
+        &-price {
+            margin-bottom: 15px;
+            color: $blue;
+        }
+
+        &-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            li {
+                color: $black;
+                margin-bottom: 10px;
+                position: relative;
+                padding-left: 20px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 4px;
+                    height: 4px;
+                    background-color: $black;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        &-features--popular {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            color: $white;
+
+            li {
+                color: $white;
+                margin-bottom: 10px;
+                position: relative;
+                padding-left: 20px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 4px;
+                    height: 4px;
+                    background-color: $white;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+        &-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            color: $black;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            text-align: center;
+            border-radius: 40px;
+            border: 1px solid $black;
+            margin-top: 1rem;
+
+            &:hover {
+                background-color: #cbcbcb;
+            }
+        }
+
+        &:nth-child(2) &-btn {
+            background-color: $greyLightSecondary;
+        }
+
+        &--popular {
+            background-color: $greyDark;
+            transform: scale(1);
+            color: $white;
+        }
+    }
+
+    .price {
+        color: $blue;
+    }
+
+    .prew {
+        text-decoration: line-through;
+    }
+
+    .discount {
+        background: $yellow;
+        border-radius: 12px;
+        padding: 3px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+}
+
+

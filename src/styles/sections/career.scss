@@ -1,0 +1,85 @@
+@import '../base/vars';
+@import '../base/mixins';
+@import '../base/reset';
+@import '../base/base';
+
+.career {
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        font-size: 40px;
+        font-weight: 800;
+        margin-bottom: 40px;
+    }
+
+    &__content {
+        background: $black;
+        border-radius: 40px;
+        color: $white;
+        display: flex;
+        align-items: center;
+        padding-left: 52px;
+        padding-top: 52px;
+        overflow: hidden;
+
+        @include mediaWidth($desktop) {
+            flex-direction: column;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 52px;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__text__subtitle {
+        color: $greyLight;
+    }
+
+    &__details {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        
+        @include mediaWidth($desktop) {
+            position: absolute;
+            bottom: 5%;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100%;
+            gap: 5px;
+            padding: 15px;
+        }
+    }
+
+    &__img {
+        @include mediaWidth($desktop) {
+            width: 400px;
+            margin-bottom: 3.5rem;
+        }
+    }
+
+    &__details__btn {
+        padding: 6px 16px;
+        border-radius: 28px;
+        margin-top: 2rem;
+        background-color: #1A1A1A;
+        color: white;
+        border: 1px solid $white;
+        text-align: center;
+        width: 100%;
+
+        @include mediaWidth($mobile) {
+            padding: 4px 10px;
+        }
+    }
+}
